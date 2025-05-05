@@ -27,7 +27,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3001/student/signup',
+        'http://localhost:3002/student/signup',
         {
           Fullname: name,
           email,
@@ -35,7 +35,7 @@ const Signup = () => {
           College: college,
           Branch: branch,
           Year: year,
-          Password:confirmPassword,
+          Password: confirmPassword,
         },
         {
           headers: { 'Content-type': 'application/json' },
@@ -59,8 +59,8 @@ const Signup = () => {
   return (
     <>
       <Navbar />
- <div className='h-280 flex items-center justify-center bg-gray-100 px-4'>
-    <div className='bg-white p-8 rounded-2xl shadow-lg w-150 h-250 max-w-m'>
+      <div className='h-280 flex items-center justify-center bg-gray-100 px-4'>
+        <div className='bg-white p-8 rounded-2xl shadow-lg w-150 h-250 max-w-m'>
           <div className='mb-6 text-center'>
             <h1 className='text-4xl text-[#0447a5] font-bold'>PROJECT NEST</h1>
             <p className='text-gray-500'>Learn by Doing. Build with Confidence.</p>

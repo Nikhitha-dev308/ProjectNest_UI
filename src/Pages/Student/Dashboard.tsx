@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaRobot } from 'react-icons/fa';
 import { FiBell, FiFolder, FiFolderPlus, FiHelpCircle, FiUser, FiPlusCircle } from 'react-icons/fi';
 import { HiOutlineLogout } from 'react-icons/hi';
 import { Link, useNavigate } from 'react-router-dom';
@@ -37,17 +38,27 @@ const Dashboard = () => {
             <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
               💳 Payments
             </li>
-            <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
-              📚 Resources
-            </li>
-            <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+            <Link to='/student/freeresources'>
+              <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+                📚 Resources
+              </li>
+            </Link>
+            <Link to='/student/askai'>
+              <li className="flex items-center gap-3 mt-5 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+                <FaRobot className="text-xl" />
+                Ask AI
+              </li>
+            </Link>
+            <li className="flex items-center gap-3 mt-5 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
               <FiHelpCircle className="text-xl" />
               Support
             </li>
-            <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
-              <FiUser className="text-xl" />
-              Profile
-            </li>
+            <Link to="/student/profile">
+              <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+                <FiUser className="text-xl" />
+                Profile
+              </li>
+            </Link>
           </ul>
         </div>
         <div className="mt-40 pt-6">
@@ -65,7 +76,7 @@ const Dashboard = () => {
       <div className="flex-1 flex flex-col">
         {/* Top Navbar */}
         <div className="bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#0284C7] shadow-md px-8 py-4 flex justify-between items-center">
-          <h2 className="text-lg font-medium text-white">Hello, Nikhitha 👋</h2>
+          <h2 className="text-lg font-medium text-white">Hello, Student 👋</h2>
           <div className="flex items-center gap-4 group">
             {/* Plus Icon */}
             <div onClick={() => { setShow(true) }} className='relative'>

@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
-import Navbar from '../../HomeScreen/Navbar';
+import { useState } from 'react';
 import axios from 'axios';
+import { FiPlusCircle } from 'react-icons/fi';
+import { HiOutlineLogout } from 'react-icons/hi';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const CreateProject = () => {
+  const [show, setShow] = useState(false);
+
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/');
+  };
+
 
   const handleTitle = (event: any) => {
     setTitle(event.target.value);
@@ -39,7 +51,26 @@ const CreateProject = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
+      <div className="bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#0284C7] shadow-md px-8 py-4 flex justify-between items-center">
+        <Link to='/student/dashboard'><h2 className="text-lg font-medium text-white">Hello, Student 👋</h2></Link>
+        <div className="flex items-center gap-4 group">
+          <Link to="/student/createproject">
+            <FiPlusCircle className="text-3xl text-white cursor-pointer" />
+          </Link>
+          <span className="text-sm text-white opacity-70 group-hover:opacity-100 transition">Create</span>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-5 py-2 bg-white text-[#1E3A8A] rounded-full hover:bg-[#063a8c] hover:text-white transition duration-200 cursor-pointer"
+          >
+            <HiOutlineLogout />
+            Logout
+          </button>
+        </div>
+      </div>
+
+
+
       <div className="flex h-162 font-sans bg-gradient-to-r from-[#e0f2fe] via-white to-[#f0f9ff] sticky">
         {/* Left - Form */}
         <div className="w-1/2 flex items-center justify-center p-8">

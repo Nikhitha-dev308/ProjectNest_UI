@@ -63,17 +63,21 @@ const Projects = () => {
           <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
             💳 Payments
           </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
-            📚 Resources
-          </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+          <Link to='/expert/freeresources'>
+            <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+              📚 Resources
+            </li>
+          </Link>
+          <li className="flex items-center gap-3 mt-5 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
             <FiHelpCircle className="text-xl" />
             Support
           </li>
-          <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
-            <FiUser className="text-xl" />
-            Profile
-          </li>
+          <Link to='/expert/profile'>
+            <li className="flex items-center gap-3 cursor-pointer hover:text-[#d7e4f7] hover:underline transition">
+              <FiUser className="text-xl" />
+              Profile
+            </li>
+          </Link>
         </ul>
       </div>
 

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import axios from 'axios';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [college, setCollege] = useState('');
   const [branch, setBranch] = useState('');
-  const [year, setYear] = useState('');
+  const [year, setYear] = useState('') as any;
   const [createPassword, setCreatePassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -29,12 +29,12 @@ const Signup = () => {
       const response = await axios.post(
         'http://localhost:3002/student/signup',
         {
-          Fullname: name,
+          name: name,
           email,
-          Phonenumber: number,
-          College: college,
-          Branch: branch,
-          Year: year,
+          phone: phone,
+          college: college,
+          branch: branch,
+          year: year,
           Password: confirmPassword,
         },
         {
@@ -45,7 +45,7 @@ const Signup = () => {
       setSuccess('Account created successfully!');
       setName('');
       setEmail('');
-      setNumber('');
+      setPhone('');
       setCollege('');
       setBranch('');
       setYear('');
@@ -80,7 +80,7 @@ const Signup = () => {
             </div>
             <div>
               <label className='block mb-2 font-medium'>Phone Number</label>
-              <input value={number} onChange={(e) => setNumber(e.target.value)} className='w-full border border-gray-300 rounded-xl px-4 py-2' type='tel' placeholder='Enter number' required />
+              <input value={phone} onChange={(e) => setPhone(e.target.value)} className='w-full border border-gray-300 rounded-xl px-4 py-2' type='tel' placeholder='Enter number' required />
             </div>
             <div>
               <label className='block mb-2 font-medium'>College</label>
@@ -102,10 +102,10 @@ const Signup = () => {
               <label className='block mb-2 font-medium'>Year of Study</label>
               <select value={year} onChange={(e) => setYear(e.target.value)} className='w-full border border-gray-300 rounded-xl px-4 py-2' required>
                 <option value=''>Select year</option>
-                <option value='1st year'>1st year</option>
-                <option value='2nd year'>2nd year</option>
-                <option value='3rd year'>3rd year</option>
-                <option value='4th year'>4th year</option>
+                <option value='1st'>1st </option>
+                <option value='2nd '>2nd </option>
+                <option value='3rd '>3rd </option>
+                <option value='4th '>4th </option>
               </select>
             </div>
             <div>

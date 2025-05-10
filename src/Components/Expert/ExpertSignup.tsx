@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import axios from "axios";
 
 const ExpertSignup = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [number, setNumber] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
   const [experience, setExperience] = useState<number>();
   const [url, setUrl] = useState<string>("");
   const [city, setCity] = useState<string>("");
@@ -33,7 +33,7 @@ const ExpertSignup = () => {
         {
           name,
           email,
-          number,
+          phone,
           experience,
           github: url,
           city,
@@ -51,7 +51,7 @@ const ExpertSignup = () => {
         setSuccess('Account created successfully!');
         setName('');
         setEmail('');
-        setNumber('');
+        setPhone('');
         setExperience(undefined);
         setUrl('');
         setCity('');
@@ -84,7 +84,7 @@ const ExpertSignup = () => {
           </div>
           <div className='space-y-5'>
             <p className='text-gray-900 block mb-2 font-medium mt-5'>Phone Number</p>
-            <input value={number} onChange={(e) => setNumber(e.target.value)} className='w-full border border-gray-300 rounded-xl px-4 py-2' type="number" placeholder='Enter number' required />
+            <input value={phone} onChange={(e) => setPhone(e.target.value)} className='w-full border border-gray-300 rounded-xl px-4 py-2' type="text" placeholder='Enter number' required />
           </div>
           <div className='space-y-5'>
             <p className='text-gray-900 block mb-2 font-medium mt-5'>Professional Experience</p>

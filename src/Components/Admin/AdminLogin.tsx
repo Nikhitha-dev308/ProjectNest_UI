@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from '../Student/Footer/Footer';
+import Footer from '../Student/Footer';
 import axios from 'axios';
 import { useNavigate } from "react-router";
 import AdminNavbar from "./AdminNavbar";
